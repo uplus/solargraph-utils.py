@@ -1,6 +1,17 @@
 # solargraph-utils.py
 
-[solargraph-utils](https://github.com/castwide/solargraph-utils) for python
+A utilities of [solargraph](https://github.com/castwide/solargraph) for python inspired by [solargraph-utils](https://github.com/castwide/solargraph-utils).  
+
+## Current supported APIs
+
+* `/prepare`
+* `/update`
+* `/suggest`
+* `/define`
+* `/resolve`
+* `/signify`
+
+[solargraph API docs](https://github.com/castwide/solargraph/blob/master/SERVER.md).  
 
 ## Example
 
