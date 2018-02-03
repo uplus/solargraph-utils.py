@@ -36,8 +36,7 @@ class Server:
             line = self.proc.stdout.readline().decode('utf-8')
 
             if not line:
-                # self.error('Failed to start server' + (output and ':\n' + output))
-                return
+                raise ServerError('Failed to start server' + (output and ':\n' + output))
 
             match = re.search(r'port=(\d+)', line)
             if match:
@@ -65,8 +64,7 @@ class Client:
             result = post_request(self.url, path, params)
             return json.loads(result.decode('utf8'))
         except HTTPError as error:
-            message = error.read()
-            return {'status': 'err', 'message': message}
+            raise ClientError(str(error)) from error
 
     def prepare(workspace):
         return self.request('prepare', {'workspace': workspace})
