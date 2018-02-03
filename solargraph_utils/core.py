@@ -88,8 +88,30 @@ class Client:
         }
         return self.request('suggest', params)
 
-    # def signify():
-    #
-    # def resolve():
-    #
-    # def hover():
+    def define(self, text, line, column, filename=None, workspace=None):
+        params = {
+            'text': text,
+            'line': line,
+            'column': column,
+            'filename': filename,
+            'workspace': workspace,
+        }
+        return self.request('define', params)
+
+    def resolve(self, path, filename, workspace):
+        params = {
+            'path': path,
+            'filename': filename,
+            'workspace': workspace,
+        }
+        return self.request('resolve', params)
+
+    def signify(self, text, line, column, filename=None, workspace=None):
+        params = {
+            'text': text,
+            'line': line,
+            'column': column,
+            'filename': filename,
+            'workspace': workspace,
+        }
+        return self.request('signify', params)
