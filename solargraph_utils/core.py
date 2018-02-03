@@ -14,7 +14,8 @@ class Server:
         # --port=0 Use free port
         self.command = command
         self.args = args
-
+        self.proc = None
+        self.port = None
         self.start()
         signal.signal(signal.SIGTERM, lambda num, stack : self.stop())
         self.host = 'localhost'
@@ -53,6 +54,9 @@ class Server:
         self.proc.kill()
         self.proc = None
         self.port = None
+
+    def is_started(self):
+        return self.proc is not None and self.port is not None
 
 
 class Client:
