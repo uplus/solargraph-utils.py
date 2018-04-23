@@ -18,6 +18,8 @@ class Server:
         self.port = None
         self.start()
         signal.signal(signal.SIGTERM, lambda num, stack : self.stop())
+        signal.signal(signal.SIGHUP, lambda num, stack : self.stop())
+        signal.signal(signal.SIGINT, lambda num, stack : self.stop())
         self.host = 'localhost'
         self.url = 'http://{}:{}/'.format(self.host, self.port)
 
