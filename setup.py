@@ -9,7 +9,7 @@ with open('LICENSE.txt') as f:
 
 setup(
     name='solargraph-utils.py',
-    version='1.0.0',
+    version='1.1.0',
     description='solargraph-utils for python',
     long_description=readme,
     author='uplus',
